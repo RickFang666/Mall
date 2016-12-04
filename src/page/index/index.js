@@ -11,5 +11,9 @@ var _mm = require('util/mm.js')
 //       console.log(errmsg)
 //   }
 // })
+var data = {
+  data: 123
+  var html = '<div>{{data}}</div>'
+}
+console.log(_mm.renderHtml(html, data))
 
-console.log(_mm.getUrlParam('test'))
