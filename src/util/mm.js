@@ -1,4 +1,4 @@
-var Hogon = require('hogon')
+var Hogan = require('hogan')
 var conf = {
   serverHost: ''
 }
@@ -42,7 +42,7 @@ var _mm = {
   },
   //渲染html模板
   renderHtml: function (htmlTemplate, data){
-    var template = Hogon.compile(htmlTemplate),
+    var template = Hogan.compile(htmlTemplate),
     result = template.render(data)
     return result
   },
