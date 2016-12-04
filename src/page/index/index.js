@@ -13,7 +13,8 @@ var _mm = require('util/mm.js')
 // })
 var data = {
   data: 123
-  var html = '<div>{{data}}</div>'
 }
+  var html = '<div>{{data}}</div>'
+
 console.log(_mm.renderHtml(html, data))
 

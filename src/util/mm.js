@@ -41,11 +41,23 @@ var _mm = {
     return result ? decodeURIComponent(result[2]) : null
   },
   //渲染html模板
-  renderHtml: function (htmlTemplate, data){
+  renderHtml: function(htmlTemplate, data){
     var template = Hogan.compile(htmlTemplate),
-    result = template.render(data)
+        result = template.render(data);
     return result
   },
+  //成功提示
+  successTips: function (msg){
+    alert(msg || '操作成功')
+  },
+  //错误提示
+  errorTips: function (msg){
+    alert(msg || '出现错误')
+  },
+  //字段的验证，支持是否为空、手机、邮箱
+  validate: function (value, type){
+    var value = $.trim(value)
+  }
   //统一登录处理
   doLogin : function (){
     window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href)
