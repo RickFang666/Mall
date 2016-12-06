@@ -54,13 +54,26 @@ var _mm = {
   errorTips: function (msg){
     alert(msg || '出现错误')
   },
-  //字段的验证，支持是否为空、手机、邮箱
+  //字段的验证，支持是否为空、手机、邮箱的判断
   validate: function (value, type){
     var value = $.trim(value)
-  }
+    if(type === 'require') {
+      //非空验证 return true/false
+      return !!value
+    }
+    if(type === 'phone') {
+      return /^1\d{10}$/.test(value)
+    }
+    if(type === 'mail') {
+      return /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value)
+    }
+  },
   //统一登录处理
   doLogin : function (){
     window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href)
+  },
+  goHome: function (){
+    window.location.href = './index.html'
   }
 }
 

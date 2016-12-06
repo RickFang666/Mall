@@ -1,1 +1,1 @@
-console.log('im global')
+require('./layout.css')
