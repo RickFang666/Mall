@@ -1,5 +1,6 @@
 require('./index.css')
 var _mm = require('util/mm.js')
+var templateIndex = require('./index.string')
 
 var navSide = {
   option: {
@@ -26,7 +27,7 @@ var navSide = {
       href: './user-center.html'
     },
     ]
-  }
+  },
 
   init: function (option){
     $.extend(this.option, option)
@@ -34,12 +35,17 @@ var navSide = {
   },
 
   renderNav: function (){
-    vat iLength = this.option.navList.length
+    var iLength = this.option.navList.length
     for (var i = 0; i < iLength; i++){
       if(this.option.navList[i] === this.option.name) {
         this.option.navList.isActive = true
       }
-      var navHtml = _mm.renderHtml()
+      var navHtml = _mm.renderHtml(templateIndex, {
+        navList: this.option.navList
+      })
     }
+    $('.nav-side').html(navHtml)
   }
 }
+
+module.exports = navSide;
