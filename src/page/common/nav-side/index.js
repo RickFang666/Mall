@@ -14,31 +14,32 @@ var navSide = {
     {
       name: 'order-list',
       desc: '我的订单',
-      href: './user-center.html'
+      href: './order-list.html'
     },
     {
       name: 'pass-update',
       desc: '修改密码',
-      href: './user-center.html'
+      href: './pass-update.html'
     },
     {
       name: 'about',
       desc: '关于Mall',
-      href: './user-center.html'
+      href: './about.html'
     },
     ]
   },
 
   init: function (option){
     $.extend(this.option, option)
+    console.log(this.option)
     this.renderNav()
   },
 
   renderNav: function (){
     var iLength = this.option.navList.length
     for (var i = 0; i < iLength; i++){
-      if(this.option.navList[i] === this.option.name) {
-        this.option.navList.isActive = true
+      if(this.option.navList[i].name === this.option.name) {
+        this.option.navList[i].isActive = true
       }
       var navHtml = _mm.renderHtml(templateIndex, {
         navList: this.option.navList
