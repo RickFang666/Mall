@@ -1,3 +1,4 @@
+'use strict';
 var _mm = require('util/mm.js')
 
 var _user = {
@@ -17,6 +18,15 @@ var _user = {
                 type: 'username',
                 str: username
             },
+            method: 'POST',
+            success: resolve,
+            error: reject
+        })
+    },
+    register: function (userInfo, resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/register.do'),
+            data: userInfo,
             method: 'POST',
             success: resolve,
             error: reject

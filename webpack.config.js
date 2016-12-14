@@ -23,6 +23,8 @@ var config = {
     'common': ['./src/page/common/index.js'],
     'index': ['./src/page/index/index.js'],
     'user-login': ['./src/page/user-login/index.js'],
+    'user-register': ['./src/page/user-register/index.js'],
+    'user-pass-reset': ['./src/page/user-pass-reset/index.js'],
     'result': ['./src/page/result/index.js']
   },
   output: {
@@ -54,7 +56,9 @@ var config = {
   //html模板的处理
     new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
     new HtmlWebpackPlugin(getHtmlConfig('user-login','登录')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-register','注册')),
     new HtmlWebpackPlugin(getHtmlConfig('result','结果')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset','找回密码')),
   ],
     module: {
         loaders: [

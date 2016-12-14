@@ -1,3 +1,4 @@
+'use strict';
 var Hogan = require('hogan')
 var conf = {
   serverHost: ''
@@ -64,7 +65,7 @@ var _mm = {
     if(type === 'phone') {
       return /^1\d{10}$/.test(value)
     }
-    if(type === 'mail') {
+    if(type === 'email') {
       return /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value)
     }
   },
