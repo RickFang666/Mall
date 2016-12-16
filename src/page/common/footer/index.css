@@ -1,6 +1,10 @@
 .footer{
     margin-top: 20px;
     padding-bottom: 10px;
+    position: absolute;
+    margin-left: 50%;
+    left: -540px;
+    bottom: 30px;
 }
 .footer .links{
     text-align: center;
